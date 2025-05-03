@@ -1,1 +1,0 @@
-# This file will contain learning resources, notes and other stack realted informations #
