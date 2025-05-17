@@ -119,4 +119,13 @@
     - Design a tiny URL generator
 
 
-    
+############ ############ ################## #####################
+
+micro-services and event driven architecture
+
+real time systems
+
+
+
+
+

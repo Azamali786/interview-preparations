@@ -844,11 +844,40 @@ Table of Content
 
 # String
 47. Reverse a String  
+    a- python builtin
+
+    b- two pointers approach
+
+    c- backward traversal
+
+
 48. Check whether a String is Palindrome or not  
-49. Find Duplicate characters in a string  
-50. Why strings are immutable in Java?  
+    a- reverse and compate
+
+    b- using two pointers
+
+    c- recursive approach
+
+49. Find Duplicate characters in a string
+    a- using Counter from from collectons module
+
+    b- using sorting and traversal neighbour checks
+
+    c- using hashing
+
+    d- using default dict
+
+50. Why strings are immutable in python?  
+
 51. Write a Code to check whether one string is a rotation of another  
+    a- nav (rotate and check if s1=s2)
+
+    b- built in method (s1 = s1+s1 and check s2 in s1)
+
+
+
 52. Write a Program to check whether a string is a valid shuffle of two strings or not  
+
 53. Count and Say problem  
 54. Write a program to find the longest Palindrome in a string. [Longest palindromic Substring]  
 55. Find Longest Recurring Subsequence in String  
