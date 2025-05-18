@@ -256,3 +256,119 @@
     - Safe serialization/deserialization 
     - Secure password handling
 
+
+####################### python advance topics ######################
+1- higher order function
+
+2- lambda functions
+
+3- type hinting
+
+Type hinting in Python helps make your code more maintainable, readable, and less prone to runtime errors. 
+1. Basic Type Hints
+
+Variable Annotations
+
+name: str = "Alice"
+age: int = 30
+is_active: bool = True
+pi: float = 3.14159
+
+functional annotations
+
+def greet(name: str) -> str:
+    return f"Hello, {name}"
+
+def calculate_area(length: float, width: float) -> float:
+    return length * width
+
+2. Common Type Annotations
+
+Collections: 
+
+from typing import List, Dict, Set, Tuple
+
+names: List[str] = ["Alice", "Bob", "Charlie"]
+scores: Dict[str, int] = {"Alice": 90, "Bob": 85}
+unique_ids: Set[int] = {101, 102, 103}
+coordinates: Tuple[float, float] = (10.5, 20.3)
+
+Optional Values:
+from typing import Optional
+
+def find_user(user_id: int) -> Optional[str]:
+    users = {1: "Alice", 2: "Bob"}
+    return users.get(user_id)  # Returns str or None
+
+
+Union Types:
+from typing import Union
+
+def square(number: Union[int, float]) -> Union[int, float]:
+    return number ** 2
+
+3. Advanced Type Hints
+Type Aliases:
+from typing import Dict, List
+
+UserId = int
+UserName = str
+UserData = Dict[UserId, UserName]
+
+def process_users(users: UserData) -> List[UserName]:
+    return list(users.values())
+
+
+
+4- decorators
+
+5- generator functions
+
+6- magic methods (Dunder Methods)
+
+7- *args and **kwargs
+
+8- comprehensions (list, dict)
+
+9- context manager
+
+10- Async Programming (used for I/O bound tasks)
+
+11- Error Handling 
+    BaseException
+    ├── SystemExit
+    ├── KeyboardInterrupt
+    ├── GeneratorExit
+    └── Exception
+        ├── StopIteration
+        ├── ArithmeticError
+        │    ├── FloatingPointError
+        │    ├── OverflowError
+        │    └── ZeroDivisionError
+        ├── AssertionError
+        ├── AttributeError
+        ├── BufferError
+        ├── EOFError
+        ├── ImportError
+        ├── LookupError
+        │    ├── IndexError
+        │    └── KeyError
+        ├── MemoryError
+        ├── NameError
+        ├── OSError
+        │    ├── FileNotFoundError
+        │    ├── PermissionError
+        │    └── ...
+        ├── RuntimeError
+        ├── SyntaxError
+        ├── TypeError
+        ├── ValueError
+        └── ...
+
+12- file handling in python (normal and binary files both)
+
+####################################################################################
+
+"At the same time": Two trains arriving at a station at the exact same moment.
+"Overlapping time": A meeting starting at 9:00 AM and ending at 10:00 AM overlaps with another meeting starting at 9:30 AM and ending at 10:30 AM
+
