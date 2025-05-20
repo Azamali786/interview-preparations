@@ -119,11 +119,25 @@
     - Design a tiny URL generator
 
 
-############ ############ ################## #####################
+######################## system design Udemy  #####################
 
 micro-services and event driven architecture
 
 real time systems
+
+# introduction to IP address 
+IP (Internet Protocol) addresses are unique numerical labels assigned to devices on a network
+they enable communicatoin b/t machines, servers and services accross the internet
+two primary versions are
+1- IP v4
+2- IP v6
+
+two primary categories
+1- public 
+2- private
+
+
+
 
 
 
