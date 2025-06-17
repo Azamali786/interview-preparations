@@ -554,6 +554,21 @@ fastapi-project
 
         - Asynchronous Programming
             - async and await in FastAPI
+                First, understand:
+                    async def → Defines an asynchronous function.
+                    await → Waits for an asynchronous task to finish without blocking the rest of the server.
+
+                    Async def :
+                    from fastapi import FastAPI
+                    import asyncio
+
+                    app = FastAPI()
+
+                    @app.get("/async")
+                    async def read_async():
+                        await asyncio.sleep(5)  # Non-blocking!
+                        return {"message": "Completed after 5 seconds"}
+
             - When to use async vs sync
         - Advanced Request Handling
             - Headers, Cookies
