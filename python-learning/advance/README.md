@@ -414,7 +414,131 @@
     - Using built-in modules (math, datetime, os, etc.)
     - Understanding __name__ == "__main__"
 
+    This is a common Python idiom that checks whether the current script is being run directly or being imported as a module in another script. It helps control code execution based on how the file is being used.
+
+    Why is it Needed?
+    Prevents Unwanted Execution: Code under this block runs only when the script is executed directly, not when imported.
+    Module vs. Script Behavior: Allows a file to act as:
+    A standalone program when run directly.
+    A reusable module when imported elsewhere.
+
+    How It Works
+        __name__ is a special built-in variable in Python:
+        If the script is run directly, __name__ is set to "__main__".
+        If the script is imported, __name__ is set to the module's name.
+
+
 4. Exception Handling
+    . Basic try-except Block
+        The fundamental structure for catching and handling exceptions:
+        try:
+            # Code that might raise an exception
+            result = 10 / 0
+        except ZeroDivisionError:
+            # Handle specific exception
+            print("Cannot divide by zero!")
+        Key Points:
+        The try block contains code that might raise exceptions
+        except blocks catch and handle specific exceptions
+        Always catch the most specific exceptions first
+
+    . Multiple except Blocks
+        Handle different exceptions differently:
+        try:
+            # Code that might raise different exceptions
+            value = int("abc")
+            result = 10 / value
+        except ValueError:
+            print("Invalid integer conversion")
+        except ZeroDivisionError:
+            print("Cannot divide by zero")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+
+    . else Clause
+        The else block runs when no exceptions occur:
+        try:
+            result = 10 / 2
+        except ZeroDivisionError:
+            print("Division failed")
+        else:
+            print(f"Division succeeded: {result}")
+
+        When to Use:
+            For code that should only run when the try block succeeds
+            Keeps the happy path separate from error handling
+            Makes the code's intent clearer
+
+    . finally Clause
+        The finally block always executes, regardless of exceptions:
+        file = None
+        try:
+            file = open("data.txt", "r")
+            content = file.read()
+        except FileNotFoundError:
+            print("File not found")
+        finally:
+            if file:
+                file.close()
+            print("Cleanup complete")
+
+    . Raising Exceptions Manually
+        You can raise exceptions explicitly:
+        def validate_age(age):
+            if age < 0:
+                raise ValueError("Age cannot be negative")
+            if age > 120:
+                raise ValueError("Age seems unrealistic")
+            return True
+
+        try:
+            validate_age(-5)
+        except ValueError as e:
+            print(f"Validation failed: {e}")
+
+    . Custom Exceptions
+        Create your own exception types
+        class InvalidEmailError(Exception):
+            """Raised when an email doesn't match the required format"""
+            pass
+
+        def validate_email(email):
+            if "@" not in email:
+                raise InvalidEmailError(f"Invalid email: {email}")
+
+        try:
+            validate_email("user.example.com")
+        except InvalidEmailError as e:
+            print(f"Error: {e}")
+
+    - All together
+        def process_data(data):
+            try:
+                print("Processing started")
+                if not data:
+                    raise ValueError("No data provided")
+                result = len(data) / len(data[0])
+            except ValueError as ve:
+                print(f"Value error: {ve}")
+                return None
+            except ZeroDivisionError:
+                print("Empty data structure")
+                return None
+            except Exception as e:
+                print(f"Unexpected error: {e}")
+                raise  # Re-raise unexpected exceptions
+            else:
+                print("Processing completed successfully")
+                return result
+            finally:
+                print("Cleanup operations complete")
+        
+
+            # Example usage
+            print(process_data(["a", "b", "c"]))  # Normal case
+            print(process_data([]))  # ZeroDivisionError case
+            print(process_data(None))  # ValueError case
+
     - try, except, finally
     - else clause in exception handling
     - Raising exceptions manually
