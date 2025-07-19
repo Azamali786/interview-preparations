@@ -411,7 +411,7 @@ Excalidraw for Whiteboarding
 
 ##############  DSA patterns #####################
 🔥 All Essential DSA Problem Solving Patterns (with Use Cases)
-1. 🧊 Sliding Window
+1. 🧊 Sliding Window  
 ✅ What: Use a window that slides over data to reduce time complexity.
 🔧 When: Working with contiguous subarrays/substrings, especially for max/min/sum/count.
 📌 Examples:
@@ -424,15 +424,15 @@ Minimum window substring
 Count of anagrams in a string
 
 Python Tools:
-python
-Copy
-Edit
+
 left = 0
 for right in range(len(arr)):
     # expand window
     while window_invalid:
         # shrink window from left
         left += 1
+
+        
 2. 🧮 Two Pointers
 ✅ What: Use two indices to solve problems in a single pass.
 🔧 When: For sorted arrays/strings where you need to find a pair/triplet or remove duplicates.
